@@ -22,9 +22,17 @@ class PhotosController < ApplicationController
     @photo = Photo.find(params[:id])
   end
 
+  def update
+    @photo = Photo.find(params[:id])
+    @photo.update_attributes(photo_params)
+
+    redirect_to photo_path(@photo)
+  end
+
   def destroy
-    @photo = Photo.find(parmas[:id])
+    @photo = Photo.find(params[:id])    
     @photo.destroy
+    
     redirect_to photos_url
   end
 
