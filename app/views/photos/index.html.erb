@@ -4,7 +4,7 @@
     <%= photo.title %>
     <%= link_to 'Show', photo_path(photo) %>
     <%= link_to 'Edit', edit_photo_path(photo) %>
-    <%= link_to 'Destroy', photo_path(photo), method: :delete, date:{confirm: "確定刪除嘛??"} %>
+    <%= link_to 'Destroy', photo_path(photo), method: :delete, data:{confirm: "確定刪除嘛??"} %>
   </li>
   <% end %>
 </ul>

@@ -1,0 +1,27 @@
+<% if @photo.errors.present? %> <!--如果 if 的條件式成立，才去把 HTML 內容顯示出來。而 if 的條件寫成 @photo.errors.present?-->
+  <ul>
+    <% @photo.errors.each do |error, message| %>
+    <li>
+      <%= "#{error.capitalize} #{message}" %> <!-- 自動顯示內建訊息--> 
+    </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @photo, :url => photos_path do |f| %>
+
+  <%= f.label :title, "Title" %>
+  <%= f.text_field :title %>
+
+  <%= f.label :date, "Date" %>
+  <%= f.text_field :date %>
+
+  <%= f.label :description, "Description" %>
+  <%= f.text_area :description %>
+
+  <%= f.label :file_location, "File_location" %>
+  <%= f.text_field :file_location %>
+
+  <%= f.submit %>
+
+<% end %>
